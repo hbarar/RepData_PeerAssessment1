@@ -24,7 +24,7 @@ dim(data)
 ```
 # 2-Histogram of the total number of steps taken each day
 
-```{r }
+```{r echo = TRUE}
 m11<-aggregate(steps ~ date ,data, sum, na.rm=TRUE)
 
 hist(m11$steps,xlab = "total steps",ylab="frequency",main="Total steps taken per day",
@@ -38,7 +38,7 @@ hist(m11$steps,xlab = "total steps",ylab="frequency",main="Total steps taken per
 
 #3-Mean and median number of steps taken each day
 
-```{r }
+```{r echo = TRUE}
 meanh<-print( mean(m11$steps) )
 medianh<-print( median(m11$steps) )
 ```
@@ -50,7 +50,7 @@ The median number of steps taken each day was 10765 steps.
 
 #4-Time series plot of the average number of steps taken
 
-```{r }
+```{r echo = TRUE}
 m22<-aggregate(steps ~interval, data,mean, na.rm=TRUE)
 
 plot(x=m22$interval,y=m22$steps,type="l",
@@ -62,7 +62,7 @@ plot(x=m22$interval,y=m22$steps,type="l",
 
 
 #5- The 5-minute interval that, on average, contains the maximum number of steps
-```{r }
+```{r echo = TRUE}
 Index<-max(m22$steps)
 print( m22[ which (m22$steps==Index) , 1] )
 ```
@@ -75,7 +75,7 @@ Create a new dataset that is equal to the original dataset but with the missing 
 with the average of the (average of steps based on the day of the week).
 
 
-```{r }
+```{r echo = TRUE}
 print( sum_na<-sum(is.na (data$steps)) ) 
 vec_na<-which(is.na (data$steps))
 
@@ -90,7 +90,7 @@ new_data[vec_na[i],1]<-na }
 The total number of rows with steps = 'NA' is 2304.
 
 check whether all Na data were filled 
-```{r }
+```{r echo = TRUE}
 sum_na<-sum(is.na (new_data[,1])) 
 print(sum_na)
 ```
@@ -98,7 +98,7 @@ After substittuting the NA values to the main data matrix , the number of NA val
 the new data would be zaero.
 
 #7-Histogram of the total number of steps taken each day after missing values are imputed
-```{r }
+```{r echo = TRUE}
 frame_imput<-aggregate(steps ~ date ,new_data, sum, na.rm=TRUE)
 
 hist(frame_imput$steps ,xlab = "step",ylab="frequency",main="Total steps taken per day",
@@ -107,7 +107,7 @@ hist(frame_imput$steps ,xlab = "step",ylab="frequency",main="Total steps taken p
 
 
 the mean and median of the total steps taken each day
-```{r }
+```{r echo = TRUE}
 mean_imput<-print(mean(frame_imput$steps))
 median_imput<-print(median(frame_imput$steps))
 ```
@@ -115,7 +115,7 @@ Both the average and the median of the total steps taken eah day after NAs are f
 
 Creating the histogram of total steps per day with/without imputing
 
-```{r }
+```{r echo = TRUE}
 
 
 hist(frame_imput$steps, breaks=5, xlab="Steps",main="Total steps per day", col="red")
