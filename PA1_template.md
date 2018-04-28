@@ -39,6 +39,14 @@ hist(m11$steps,xlab = "total steps",ylab="frequency",main="Total steps taken per
 
 ![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
 
+```r
+print(plot1)
+```
+
+```
+## Error in print(plot1): object 'plot1' not found
+```
+
 
 
 
@@ -83,6 +91,14 @@ plot(x=m22$interval,y=m22$steps,type="l",
 ```
 
 ![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png)
+
+```r
+print(plot2)
+```
+
+```
+## Error in print(plot2): object 'plot2' not found
+```
 
 
 #5- The 5-minute interval that, on average, contains the maximum number of steps
@@ -153,6 +169,14 @@ hist(frame_imput$steps ,xlab = "step",ylab="frequency",main="Total steps taken p
 
 ![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png)
 
+```r
+print(plot3)
+```
+
+```
+## Error in print(plot3): object 'plot3' not found
+```
+
 
 
 
@@ -186,6 +210,14 @@ legend("topright", c("without Na-data", " with NA-data"), fill=c("red", "blue") 
 
 ![plot of chunk unnamed-chunk-14](figure/unnamed-chunk-14-1.png)
 
+```r
+print(plot4)
+```
+
+```
+## Error in print(plot4): object 'plot4' not found
+```
+
 #8-Panel plot comparing the average number of steps taken per 5-minute interval across weekdays and weekends
 
 
@@ -212,6 +244,14 @@ xyplot(steps~interval | date, data=meanmatrix,facets= .~ date, type="l",layout =
 ```
 
 ![plot of chunk unnamed-chunk-16](figure/unnamed-chunk-16-1.png)
+
+```r
+print(plot5)
+```
+
+```
+## Error in print(plot5): object 'plot5' not found
+```
 
 So the average steps over the weekends show higher values than that of the weekdays.
 
