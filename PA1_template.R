@@ -1,7 +1,6 @@
 
 #  Project-1 Reproducibility course 
 
-library(rmarkdown)
 library(lattice) 
 setwd("C:\\Users\\hassan\\Desktop\\TEST")
 getwd()
